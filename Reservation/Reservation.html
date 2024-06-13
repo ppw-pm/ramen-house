@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Ramen House Reservation</title>
+  <link href="Reservation.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rampart One&family=Indie Flower&family=Caveat&family=Shadows Into Light&family=Rubik Iso&family=Shantell Sans&family=Righteous&display=swap"
+    rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <script src="https://kit.fontawesome.com/3beffc18c5.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+    <div class="logo">
+      <a href="/" title="Back to homepage">
+        <img src="/files/logo-removebg-preview.png" title="Back to homepage" style="width:100%">
+      </a>
+    </div>
+    <nav class="menu">
+      <button class="menu-toggle">
+        <span class="menu-toggle-text">Menu</span>
+        <div class="menu-toggle-bars">
+          <div class="menu-toggle-bar menu-toggle-bar-top"></div>
+          <div class="menu-toggle-bar menu-toggle-bar-middle"></div>
+          <div class="menu-toggle-bar menu-toggle-bar-bottom"></div>
+        </div>
+      </button>
+      <ul class="navigation">
+        <li class="navigation-item">
+          <a id="active" class="navigation-link" href="/Reservation/Reservation.html">
+            Reservation
+          </a>
+        </li>
+        <li class="navigation-item">
+          <a class="navigation-link" href="/Shop merch/merch.html">
+            Merch
+          </a>
+        </li>
+        <li class="navigation-item">
+          <a class="navigation-link" href="/Contact us/Contactus.html">
+            Contact Us
+          </a>
+        </li>-
+      </ul>
+    </nav>
+  </header>
+    <div class="container-1">
+      <p class="page-title"> Reservation</p>
+       <!-- <img src="/files/Visit page.png" title="chef is making ramen" style="width:100%"> -->
+    </div>
+
+    <div class="container-2">
+      <div class="reserve-buttons"> 
+        <button class="reserve-button active" name="dining" onclick="displayBtnContent(this)">
+          <span class="reserve-button-text">Dining</span>
+        </button>
+        <button class="reserve-button" name="ramen" onclick="displayBtnContent(this)">
+          <span class="reserve-button-text">Ramen Making</span>
+        </button>
+      </div>
+      <div class="reserve-details-dining">
+           <div class="dining-container">
+            <div class="column-dining">
+              <p>Opening Hours:</p>
+              <ul style="list-style: none;">
+               <li>Tuesday - Friday 17:00 - 21:00 PM</li>
+               <li>Saturday - Sunday 16:00 - 21:00 PM</li>
+               <li>Close on Mondays</li>
+              </ul>
+            </div>
+            <!--<div class="column-dining-image">
+              <img src="/files/anton-nazaretian-JCHlsKSgbSk-unsplash.jpg" title="chef is making ramen" style="width:100%">
+            </div>-->
+           </div> 
+      </div>
+      <div class="reserve-details-ramen">
+           <div class="making-container">
+            <div class="column-making-1">
+              <p>Ramen Making:</p>
+              <ul style="list-style: none;">
+               <li>Only on Saturday & Sunday 10:00 - 16:00</li>
+               <li>Availability: 1 - 10 people</li>
+               <li>Price: £25 / person</li>
+              </ul>
+            </div>
+            <div class="column-making-2">
+              <p>Ramen Making (private group):</p>
+              <ul style="list-style: none;">
+               <li>Only on Saturday & Sunday 10:00 - 16:00 </li>
+               <li>Availability: 3 - 6 people</li>
+               <li>Price: £35 / person</li>
+              </ul>
+            </div>
+           </div> 
+      </div>
+    </div>  
+</body>
+  
+<footer>
+  <div class="web-footer">
+    <p class="description5"> © 2023 RamenHouse.Co</p>
+    <p class="description7"> Created by Pornpawee Manyuen | Photos have been taken and adapted from Unsplash.com</p> 
+  </div>
+</footer>
+<script src="Reservation.js"></script>
+</html>
+
+

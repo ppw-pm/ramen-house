@@ -1,0 +1,470 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #060604;
+}
+
+header {
+    align-items: center;
+    margin-bottom: 0px;
+    margin-top: 1px;
+    padding: 0%;
+    border: 0.5px solid;
+    font-family: Righteous;
+    justify-content: space-between;
+    background-color: #000000;
+    display: flex; /* align title and menu/button to sit side-by-side */
+    position: sticky;
+  position: -webkit-sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.logo {
+   overflow: hidden;
+   font-family: Righteous;
+   text-align: left;
+   max-width: 100px;
+   float: left;
+   margin-left: 10px;
+   padding-top: 1px;
+   padding-left: 10px;
+  justify-content: space-around;
+}
+
+
+.menu {
+  position: relative, fixed; /* allow the dropdown list to be positioned below button */
+}
+
+/* menu toggle */
+
+.menu-toggle {
+  border: 2px solid #aa3700;
+  width: 80px;
+  height: 30px;
+  background: transparent;
+  display: flex; /* display menu button by default, for lower resolutions */
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  color: #aa3700;
+}
+
+.menu-toggle:hover {
+  border-color: #aa3700; /* hover styles, and also when button is selected */
+  background: #7b7b7c;
+}
+
+.menu.is-visible .menu-toggle {
+  color: #aa3700;
+  border: 2px solid #aa3700;
+}
+
+
+@media (min-width: 800px) {
+  /* hide the menu toggle button when there is enough space on screen for full menu */
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.menu-toggle-text {
+  color: #aa3700;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-right: 10px;
+  transition: all 0.5s;
+}
+
+.menu-toggle:hover .menu-toggle-text,
+.menu.is-visible .menu-toggle-text {
+  color: #aa3700;
+}
+
+/* menu toggle icon styles */
+
+.menu-toggle-bars {
+  position: relative;
+  width: 18px;
+  height: 14px;
+}
+
+.menu-toggle-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #aa3700;
+  transition: all 0.5s;
+}
+
+.menu-toggle:hover .menu-toggle-bar,
+.menu.is-visible .menu-toggle-bar {
+  background: #aa3700;
+}
+
+.menu-toggle-bar-top {
+  top: 0;
+}
+
+.menu-toggle-bar-middle {
+  top: 50%;
+  margin-top: -1px;
+}
+
+.menu-toggle-bar-bottom {
+  bottom: 0;
+}
+
+/* navigation */
+
+.navigation {
+  display: none; /* hide the list by default for lower resolutions */
+  margin: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  position: absolute;
+  z-index: 10; /* positioning over things */
+  right: 0;
+  list-style: none;
+  font-family: Righteous;
+  white-space: nowrap;
+}
+
+.menu.is-visible .navigation {
+  display: block; /* display the list when the button is selected */
+  background-color: black;
+  color: #aa3700;
+}
+
+@media (min-width: 800px) {
+  /* at larger resolutions show the whole menu in a line, not as a dropdown */
+  .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: static;
+  }
+  
+  .menu.is-visible .navigation {
+    display: flex; /* display the list when the button is selected */
+    background-color: black;
+  }
+}
+
+nav {
+  text-align: center;
+  padding: 10px;
+  text-decoration: thick;
+  font-size: 17px;
+  justify-content: space-around;
+}
+
+.navigation-item {
+    flex: 1;
+    list-style: none;
+}
+
+.navigation-link {
+    color: #aa3700;
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navigation-link:hover {
+    color: #aa3700;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+  color: #000000;
+  background-color: #aa3700;
+}
+
+.navigation a.active {
+  background-color: #000000;
+  color: #7b7b7c; 
+}
+
+#active {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 600px) {
+  .logo {
+    width: 100px;
+  }
+  .page-title {
+    font-size: 35px;
+  }
+  .column-dining{
+    width: 380px;
+    font-size: 17px;
+  }
+  .column-making-1 {
+    width: 420px;
+    font-size: 17px;
+  }
+  .column-making-2 {
+    width: 420px;
+    font-size: 17px;
+  }
+  .reserve-button { 
+    font-size: 16px;
+    width: 180px;
+  }
+  footer {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .logo {
+    width: 80px;
+  }
+  .page-title {
+    font-size: 25px;
+  }
+  .column-dining{
+    width: 350px;
+    font-size: 15px;
+  }
+  .column-making-1 {
+    width: 350px;
+    font-size: 15px;
+  }
+  .column-making-2 {
+    width: 350px;
+    font-size: 15px;
+  }
+  footer {
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .logo {
+    width: 60px;
+  }
+  .page-title {
+    font-size: 20px;
+  }
+  .column-dining{
+    width: 300px;
+    font-size: 10px;
+  }
+  .column-making-1 {
+    width: 280px;
+    font-size: 10px;
+  }
+  .column-making-2 {
+    width: 280px;
+    font-size: 10px;
+  }
+  .reserve-button { 
+    font-size: 12px;
+    width: 160px;
+  }
+  footer {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .logo {
+    width: 60px;
+  }
+  .page-title {
+    font-size: 15px;
+  }
+  .column-dining{
+    width: 200px;
+    font-size: 8px;
+  }
+  .column-making-1 {
+    width: 200px;
+    font-size: 8px;
+    display: inline-block;
+  }
+  .column-making-2 {
+    width: 200px;
+    font-size: 8px;
+    display: inline-block;
+  }
+  .reserve-button { 
+    font-size: 11px;
+    width: 150px;
+  }
+  footer {
+    font-size: 7px;
+  }
+}
+
+.container-1 {
+  padding: 0px;
+}
+
+.page-title {
+  font-family: Righteous;
+  text-align: center;
+  position: relative,fixed;
+  color: #aa3700;
+  padding: 10px;
+  margin: 0px;
+  z-index: 1;
+  text-transform: uppercase;
+}
+
+.container-2 {
+  margin: auto;
+  margin-bottom: 180px;
+}
+.reserve-buttons {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.reserve-button {
+  color: #aa3700;
+  border-radius: 3px;
+  padding: 1em 2em;
+  margin: 20px 10px 20px 10px;
+  border-color: #aa3700; 2px;
+  text-align: center;
+  cursor: pointer;
+  background-color: black;
+  font-family: Righteous;
+  display: flex;
+}
+
+.reserve-button-text {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reserve-button:hover {
+  transition: all 0.2s;
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+  background-color: #aa3700;
+  color: black;
+}
+.active {
+  background-color: #aa3700;
+  color: black;
+}
+
+.reserve-details{
+  float: center;
+  /* Hidden by default  display: none; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reserve-details-dining {
+  float: center;
+  display: "flex";
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reserve-details-ramen {
+  float: center;
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.dining-container {
+  display: flex;
+  justify-items: center;
+  justify-content: space-around;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 10px;
+}
+
+.column-dining {
+  border: 2px solid #aa3700;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  color: #aa3700;
+  font-family: Righteous;
+  float: center;
+}
+
+.column-making-1:hover, .column-making-2:hover, .column-dining:hover {
+  border: #aa3700;
+  cursor: pointer;
+  color: black;
+  background-color: #aa3700;
+}
+
+.making-container {
+  display: flex;
+  justify-items: center;
+  justify-content: space-around;
+  padding-left: 30px;
+  padding-right: 30px;
+  align-items: stretch;
+  margin: 20px 10px 20px 10px;
+}
+
+.column-making-1 {
+  border: 2px solid #aa3700;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  color: #aa3700;
+  font-family: Righteous;
+  float: center;
+}
+.column-making-2 {
+  border: 2px solid #aa3700;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  color: #aa3700;
+  font-family: Righteous;
+  float: center;
+}
+
+footer {
+    display: flex;
+    padding: 10px;
+    background-color: #aa3700;
+    margin-bottom: 0;
+    position: sticky;
+    font-family: Righteous;
+    text-align: center;
+    justify-content: center;
+}
+.description5 {
+  color: black;
+  font-family: Righteous;
+}

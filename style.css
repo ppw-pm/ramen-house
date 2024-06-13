@@ -1,0 +1,628 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #060604;
+}
+
+header {
+    align-items: center;
+    margin-bottom: 0px;
+    margin-top: 1px;
+    padding: 0%;
+    border: 0.5px solid;
+    font-family: Righteous;
+    justify-content: space-between;
+    background-color: #000000;
+    display: flex; /* align title and menu/button to sit side-by-side */
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.logo {
+   overflow: hidden;
+   font-family: Righteous;
+   text-align: left;
+   max-width: 100px;
+   float: left;
+   margin-left: 10px;
+   padding-top: 1px;
+   padding-left: 10px;
+   justify-content: space-around;
+}
+
+
+.menu {
+  position: relative; /* allow the dropdown list to be positioned below button */
+}
+
+.menu.is-visible {
+  /* any styles for when the dropdown menu should be shown */
+}
+
+/* menu toggle */
+
+.menu-toggle {
+  border: 2px solid #aa3700;
+  width: 80px;
+  height: 30px;
+  background: transparent;
+  display: flex; /* display menu button by default, for lower resolutions */
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  color: #aa3700;
+}
+
+.menu-toggle:hover {
+  border-color: #aa3700; /* hover styles, and also when button is selected */
+  background: #7b7b7c;
+}
+
+.menu.is-visible .menu-toggle {
+  color: #aa3700;
+  border: 2px solid #aa3700;
+}
+
+
+@media (min-width: 800px) {
+  /* hide the menu toggle button when there is enough space on screen for full menu */
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.menu-toggle-text {
+  color: #aa3700;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-right: 10px;
+  transition: all 0.5s;
+}
+
+.menu-toggle:hover .menu-toggle-text,
+.menu.is-visible .menu-toggle-text {
+  color: #aa3700;
+}
+
+/* menu toggle icon styles */
+
+.menu-toggle-bars {
+  position: relative;
+  width: 18px;
+  height: 14px;
+}
+
+.menu-toggle-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #aa3700;
+  transition: all 0.5s;
+}
+
+.menu-toggle:hover .menu-toggle-bar,
+.menu.is-visible .menu-toggle-bar {
+  background: #aa3700;
+}
+
+.menu-toggle-bar-top {
+  top: 0;
+}
+
+.menu-toggle-bar-middle {
+  top: 50%;
+  margin-top: -1px;
+}
+
+.menu-toggle-bar-bottom {
+  bottom: 0;
+}
+
+/* navigation */
+
+.navigation {
+  display: none; /* hide the list by default for lower resolutions */
+  margin: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  position: absolute;
+  z-index: 10; /* positioning over things */
+  right: 0;
+  list-style: none;
+  font-family: Righteous;
+  white-space: nowrap;
+}
+
+.menu.is-visible .navigation {
+  display: block; /* display the list when the button is selected */
+  background-color: black;
+  color: #aa3700;
+}
+
+@media (min-width: 800px) {
+  /* at larger resolutions show the whole menu in a line, not as a dropdown */
+  .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: static;
+  }
+  
+  
+  .menu.is-visible .navigation {
+    display: flex; /* display the list when the button is selected */
+    background-color: black;
+  }
+}
+
+nav {
+  text-align: center;
+  padding: 10px;
+  text-decoration: thick;
+  font-size: 17px;
+  justify-content: space-around;
+}
+
+.navigation-item {
+    flex: 1;
+    list-style: none;
+}
+
+.navigation-link {
+    color: #aa3700;
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navigation-link:hover {
+    color: #aa3700;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+  background-color: #aa3700;
+  color: black;
+}
+
+.navigation a.active {
+  background-color: #000000;
+  color: #7b7b7c;
+}
+
+.container1 {
+    display: flex;
+    padding: 20px;
+    position: relative;
+}
+.column1-1 {
+    flex: 1;
+    color: #aa3700;
+    padding: 10px;
+    margin: 10px;
+}
+.column1-2 {
+  padding: 10px;
+  max-width: 800px;
+  align-items: center;
+}
+
+.description1 {
+  margin: 10px;
+  margin-top: 0px;
+  padding-left: 20px;
+  font-family: Righteous;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+.description2 {
+  padding-left: 20px;
+  font-family: Righteous;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+@media screen and (min-width: 600px) {
+  .description1 {
+    font-size: 130px;
+  }
+  .description2 {
+    font-size: 30px;
+  }
+  .logo {
+    width: 100px;
+  }
+  .description3 {
+    font-size: 25px;
+  }
+  .description4 {
+    font-size: 25px;
+  }
+  .section2 {
+    font-size: 25px;
+  }
+  .reserve-button {
+    width: 110px;
+    height: 50px;
+  }
+  .reserve-button-text {
+  font-size: 20px;
+}
+  .section3 {
+    font-size: 25px;
+  }
+  .column2-2 {
+    width: 700px;
+    height: 300px;
+    margin-top: 35px;
+    padding-right: 0%;
+  }
+  .column3-1 {
+    width: 800px;
+    height: 300px;
+  }
+  .shop-button {
+    width: 110px;
+    height: 50px;
+  }
+  .shop-button-text {
+  font-size: 20px;
+}
+  .merch {
+    max-width: 400px;
+    max-height: 330px;
+  }
+  footer {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .description1 {
+    font-size: 90px;
+  }
+  .description2 {
+    font-size: 18px;
+  }
+  .description3 {
+    font-size: 23px;
+  }
+  .description4 {
+    font-size: 20px;
+  }
+  .logo {
+    width: 80px;
+  }
+  .column2-2 {
+    width: 750px;
+    height: 250px;
+  }
+  .column3-1 {
+    width: 750px;
+    height: 250px;
+  }
+  .merch {
+    max-width: 330px;
+    max-height: 300px;
+  }
+  footer {
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .description1 {
+    font-size: 55px;
+  }
+  .description2 {
+    font-size: 13px;
+  }
+  .description3 {
+    font-size: 16px;
+  }
+  .description4 {
+    font-size: 14px;
+  }
+  .section2 {
+    font-size: 15px;
+  }
+  .logo {
+    width: 60px;
+  }
+  .reserve-button {
+    width: 58px;
+    height: 28px;
+  }
+  .reserve-button-text {
+    font-size: 10px;
+ }
+  .column2-2 {
+    width: 450px;
+    height: 150px;
+  }
+  .section3 {
+    font-size: 15px;
+  }
+  .column3-1 {
+    width: 450px;
+    height: 150px;
+  }
+  .shop-button {
+    width: 58px;
+    height: 28px;
+  }
+  .shop-button-text {
+  font-size: 10px;
+ }
+  footer {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .description1 {
+    font-size: 35px;
+  }
+  .description2 {
+    font-size: 10px;
+  }
+  .description3 {
+    font-size: 13px;
+  }
+  .description4 {
+    font-size: 11px;
+  }
+  footer {
+    font-size: 7px;
+  }
+}
+
+.section2 {
+  padding-left: 20px;
+  font-family: Righteous;
+  text-align: left;
+  transition: all 0.5s;
+  color: #000000;
+  margin-bottom: 0;
+}
+
+.reserve-button {
+  border: 2px solid #000000;
+  border-radius: 5px;
+  background: transparent;
+  display: flex; /* display menu button by default, for lower resolutions */
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  color: #000000;
+}
+
+.reserve-button-text {
+  font-family: Righteous;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reserve-button:hover {
+  border-color: #000000; /* hover styles, and also when button is selected */
+  background: #000000;
+}
+.reserve-button-text:hover {
+  color: #aa3700;
+}
+
+/* slide show */
+.logoImage {
+max-width: 20%;
+margin-top: 20px;
+margin-bottom: 0px;
+padding-left: 20px;
+}
+
+- {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+max-width: 600px;
+position: relative;
+margin-left: 20px;
+align-items: center;
+}
+
+/* Hide the images by default */
+.mySlides {
+display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+cursor: pointer;
+position: absolute;
+top: 50%;
+width: auto;
+margin-top: -22px;
+padding: 16px;
+color: white;
+font-weight: bold;
+font-size: 18px;
+transition: 0.6s ease;
+border-radius: 0 3px 3px 0;
+user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+cursor: pointer;
+height: 12px;
+width: 12px;
+margin: 0 2px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+animation-name: fade;
+animation-duration: 1.5s;
+}
+
+@keyframes fade {
+from {opacity: .4}
+to {opacity: 1}
+}
+
+.container2 {
+    display: flex;
+    padding: 10px;
+    padding-left: 20px;
+    background-color: #aa3700;
+}
+
+.column2-1 {
+    flex: 1;
+    padding: 0px;
+    margin: 20px;
+    margin-left: 20px;
+}
+.column2-2{
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 10px;
+  align-items: center;
+  color: #000000;
+  margin-right: 0%;
+  margin-bottom: 0%;
+}
+
+.description3 {
+  padding-left: 6px;
+  font-family: Righteous;
+  text-align: center;
+  transition: all 0.5s;
+  position: relative;
+}
+
+.container3 {
+    display: flex;
+    padding: 20px;
+}
+.section3 {
+  padding-left: 10px;
+  font-family: Righteous;
+  text-align: left;
+  transition: all 0.5s;
+  color: #aa3700;
+  margin-bottom: 0;
+}
+
+.column3-2 {
+  padding: 10px;
+  flex: 1;
+  align-items: center;
+}
+
+.merch {
+  display: flex;
+}
+.column3-1 {
+    flex: 1;
+    color: #aa3700;
+    padding: 10px;
+    margin: 10px;
+}
+.description4 {
+  padding-left: 6px;
+  font-family: Righteous;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+.description5 {
+  padding-left: 6px;
+  font-family: Righteous;
+  text-align: center;
+  transition: all 0.5s;
+}
+ 
+.shop-button {
+  border: 2px solid #aa3700;
+  border-radius: 5px;
+  background: transparent;
+  display: flex; /* display menu button by default, for lower resolutions */
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  color: #aa3700;
+}
+
+.shop-button-text {
+  font-family: Righteous;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shop-button:hover {
+  border-color: #aa3700; /* hover styles, and also when button is selected */
+  background: #aa3700;
+}
+.shop-button-text:hover {
+  color: #000000;
+}
+
+.button {
+  margin: 0;
+  top: 35%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  position: relative;
+}
+
+footer {
+    display: flex;
+    padding: 10px;
+    background-color: #aa3700;
+    position: sticky;
+    font-family: Righteous;
+    text-align: center;
+    justify-content: center;
+}
+.description5 {
+  color: black;
+  font-family: Righteous;
+}
+a {
+  text-decoration: none;
+}

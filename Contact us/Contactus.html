@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Ramen House Contact US</title>
+  <link href="Contactus.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rampart One&family=Indie Flower&family=Caveat&family=Shadows Into Light&family=Rubik Iso&family=Shantell Sans&family=Righteous&display=swap"
+    rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <script src="https://kit.fontawesome.com/3beffc18c5.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+    <div class="logo">
+      <a href="/" title="Back to homepage">
+        <img src="/files/logo-removebg-preview.png" title="Back to homepage" style="width:100%">
+      </a>
+    </div>
+    <nav class="menu">
+      <button class="menu-toggle">
+        <span class="menu-toggle-text">Menu</span>
+        <div class="menu-toggle-bars">
+          <div class="menu-toggle-bar menu-toggle-bar-top"></div>
+          <div class="menu-toggle-bar menu-toggle-bar-middle"></div>
+          <div class="menu-toggle-bar menu-toggle-bar-bottom"></div>
+        </div>
+      </button>
+      <ul class="navigation">
+        <li class="navigation-item">
+          <a class="navigation-link" href="/Reservation/Reservation.html">
+            Reservation
+          </a>
+        </li>
+        <li class="navigation-item">
+          <a class="navigation-link" href="/Shop merch/merch.html">
+            Merch
+          </a>
+        </li>
+        <li class="navigation-item">
+          <a id="active" class="navigation-link" href="/Contact us/Contactus.html">
+            Contact Us
+          </a>
+        </li>-
+      </ul>
+    </nav>
+  </header>
+
+  <p class="page-title">Contact Us</p>
+  <div class="container">
+  <div class="column1">
+    <p class="detail">For reserving tables or workshop, please <a class="reserve" href="/Reservation/Reservation.html">
+            click Reservation Here.
+          </a>Leave us a message in the form below to get in contact.</p>
+    <label title="Required">Name*</label> <br>
+    <input type="text" name="form" value=""><br>
+    <label title="Required">Email*</label> <br>
+    <input type="text" name="form" value=""><br>
+    <label title="Required">Message*</label> <br> <textarea></textarea>
+    <br>
+    <button data-modal-target="#modal-send">Send</button>
+    <div class="modal" id="modal-send">
+      <div class="modal-header">
+         <div class="title">Thank you! We will get back to you shortly.</div>
+         <button data-close-button="" class="close-button">×</button>
+      </div>
+      <div id="overlay" class="active"></div>
+    </div>
+    
+  </div>
+  <div class="column2">
+   <img src="/files/ramenshop.png" title="Ramen shop" style="width:100%">
+  </div>
+  </div>
+
+  
+</body>
+
+  <footer>
+  <div class="web-footer">
+    <p class="description5"> © 2023 RamenHouse.Co</p>
+    <p class="description7"> Created by Pornpawee Manyuen | Photos have been taken and adapted from Unsplash.com</p> 
+  </div>
+</footer>
+<script src="Contactus.js"></script>
+</html>

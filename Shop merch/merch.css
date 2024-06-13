@@ -1,0 +1,492 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #000000;
+}
+
+header {
+    align-items: center;
+    margin-bottom: 0px;
+    margin-top: 1px;
+    padding: 0%;
+    border: 0.5px solid;
+    font-family: Righteous;
+    justify-content: space-between;
+    background-color: #000000;
+    display: flex; /* align title and menu/button to sit side-by-side */
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.logo {
+   overflow: hidden;
+   font-family: Righteous;
+   text-align: left;
+   max-width: 100px;
+   float: left;
+   margin-left: 10px;
+   padding-top: 1px;
+   padding-left: 10px;
+  justify-content: space-around;
+}
+
+.menu {
+  position: relative, fixed; /* allow the dropdown list to be positioned below button */
+}
+
+/* menu toggle */
+
+.menu-toggle {
+  border: 2px solid #aa3700;
+  width: 80px;
+  height: 30px;
+  background: transparent;
+  display: flex; /* display menu button by default, for lower resolutions */
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  color: #aa3700;
+}
+
+.menu-toggle:hover {
+  border-color: #aa3700; /* hover styles, and also when button is selected */
+  background: #7b7b7c;
+}
+
+.menu.is-visible .menu-toggle {
+  color: #aa3700;
+  border: 2px solid #aa3700;
+}
+
+
+@media (min-width: 800px) {
+  /* hide the menu toggle button when there is enough space on screen for full menu */
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.menu-toggle-text {
+  color: #aa3700;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-right: 10px;
+  transition: all 0.5s;
+}
+
+.menu-toggle:hover .menu-toggle-text,
+.menu.is-visible .menu-toggle-text {
+  color: #aa3700;
+}
+
+/* menu toggle icon styles */
+
+.menu-toggle-bars {
+  position: relative;
+  width: 18px;
+  height: 14px;
+}
+
+.menu-toggle-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #aa3700;
+  transition: all 0.5s;
+}
+
+.menu-toggle:hover .menu-toggle-bar,
+.menu.is-visible .menu-toggle-bar {
+  background: #aa3700;
+}
+
+.menu-toggle-bar-top {
+  top: 0;
+}
+
+.menu-toggle-bar-middle {
+  top: 50%;
+  margin-top: -1px;
+}
+
+.menu-toggle-bar-bottom {
+  bottom: 0;
+}
+
+/* navigation */
+
+.navigation {
+  display: none; /* hide the list by default for lower resolutions */
+  margin: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  position: absolute;
+  z-index: 10; /* positioning over things */
+  right: 0;
+  list-style: none;
+  font-family: Righteous;
+  white-space: nowrap;
+}
+
+.menu.is-visible .navigation {
+  display: block; /* display the list when the button is selected */
+  background-color: black;
+  color: #aa3700;
+}
+
+@media (min-width: 800px) {
+  /* at larger resolutions show the whole menu in a line, not as a dropdown */
+  .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: static;
+  }
+  
+  .menu.is-visible .navigation {
+    display: flex; /* display the list when the button is selected */
+    background-color: black;
+  }
+}
+
+nav {
+  text-align: center;
+  padding: 10px;
+  text-decoration: thick;
+  font-size: 17px;
+  justify-content: space-around;
+}
+
+.navigation-item {
+    flex: 1;
+    list-style: none;
+}
+
+.navigation-link {
+    color: #aa3700;
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navigation-link:hover {
+    color: #aa3700;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+  color: #000000;
+  background-color: #aa3700;
+}
+
+.navigation a.active {
+  background-color: #000000;
+  color: #7b7b7c; 
+}
+
+#active {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 600px) {
+  .logo {
+    width: 100px;
+  }
+  .column2 {
+    width: 600px;
+  }
+  .merch {
+  font-size: 35px;
+  margin-bottom: 25px;
+}
+  .mySlides {
+    width: 600px;
+  }
+  .size, .tee {
+  font-size: 20px;
+}
+  .price {
+    font-size: 25px;
+  }
+  select {
+    width: 150px;
+    height: 30px
+  }
+  button {
+    width: 100px;
+    height: 40px
+  }
+  footer {
+    font-size: 10px;
+  }
+   .colour {
+    font-size: 15px;
+  }
+}
+  
+@media screen and (max-width: 1100px) {
+  .logo {
+    width: 80px;
+  }
+  .column2 {
+    width: 550px;
+  }
+  .mySlides {
+    width: 500px;
+  }
+  .size, .tee {
+  font-size: 17px;
+}
+   .price {
+    font-size: 19px;
+  }
+  footer {
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .logo {
+    width: 60px;
+}
+  .column2 {
+    width: 380px;
+  }
+  .merch {
+  font-size: 27px;
+  margin-bottom: 25px;
+}
+  .mySlides {
+    width: 350px;
+  }
+ .size, .tee {
+  font-size: 14px;
+}
+  .price {
+    font-size: 16px;
+  }
+  footer {
+    font-size: 8px;
+  }
+   .colour {
+    font-size: 12px;
+  }
+  
+  button {
+    width: 80px;
+    height: 35px
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .logo {
+    width: 60px;
+  }
+  .column2 {
+    width: 290px;
+  }
+  .merch {
+  font-size: 21px;
+  margin-bottom: 25px;
+}
+  .mySlides {
+    width: 220px;
+  }
+  .size, .tee {
+  font-size: 11px;
+ }
+  .price {
+    font-size: 14px;
+  }
+  select {
+    width: 100px;
+    height: 20px
+  }
+  .order {
+    font-size: 10px;
+  }
+  footer {
+    font-size: 7px;
+  }
+  .colour {
+    font-size: 11px;
+  }
+}
+
+/* slide show */
+.logoImage {
+max-width: 20%;
+margin-top: 20px;
+margin-bottom: 0px;
+padding-left: 20px;
+}
+
+- {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+max-width: 600px;
+position: relative;
+margin-left: 20px;
+align-items: center;
+}
+
+/* Hide the images by default */
+.mySlides {
+ display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+cursor: pointer;
+position: absolute;
+top: 50%;
+width: auto;
+margin-top: -22px;
+padding: 16px;
+color: #ff672b;
+font-weight: bold;
+font-size: 18px;
+transition: 0.6s ease;
+border-radius: 0 3px 3px 0;
+user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+background-color:  #aa3700;
+color: black
+}
+
+/* The dots/bullets/indicators 
+.dot {
+cursor: pointer;
+height: 12px;
+width: 12px;
+margin: 0 2px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+} */
+
+/*.active, .dot:hover {
+background-color: #717171;
+} */
+
+/* Fading animation */
+.fade {
+animation-name: fade;
+animation-duration: 1.5s;
+}
+
+@keyframes fade {
+from {opacity: .4}
+to {opacity: 1}
+}
+
+.container {
+  display: flex;
+  top: 0;
+  bottom: 0;
+  padding: 10px;
+  padding-bottom: 0;
+}
+
+.column1 {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.column2 {
+  color: #aa3700;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: Righteous;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  justify-items: center
+}
+.merch {
+  color: #aa3700;
+  text-align: center;
+  font-family: Righteous;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.order {
+  color: #aa3700;
+  text-align: center;
+  font-family: Righteous;
+  padding: 20px;
+  margin-top: 0;
+}
+
+input {
+  padding: 20px;
+  color: #aa3700;
+  margin-bottom: 30px;
+}
+
+select {
+  color: #aa3700;
+  background-color: black;
+  border-color: #aa3700;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: Righteous;
+}
+
+button {
+  margin: 30px;
+  background-color: #aa3700;
+  color: black;
+  border-color: #aa3700;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: Righteous;
+}
+
+button:hover {
+  transition: all 0.2s;
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+  background-color: #aa3700;
+  color: black;
+}
+
+footer {
+    display: flex;
+    margin: 0;
+    padding: 10px;
+    background-color: #aa3700;
+    position: sticky;
+    font-family: Righteous;
+    text-align: center;
+    justify-content: center;
+}
+.description5 {
+  color: black;
+  font-family: Righteous;
+}
+
